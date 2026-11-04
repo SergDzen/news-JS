@@ -4,7 +4,7 @@ import type { Callback } from './loader';
 import type { NewsResponse, SourcesResponse } from '../../types/api';
 
 class AppController extends AppLoader {
-    getSources(callback: Callback<SourcesResponse>): void {
+    public getSources(callback: Callback<SourcesResponse>): void {
         super.getResp<SourcesResponse>(
             {
                 endpoint: ApiEndpoint.Sources,
@@ -13,7 +13,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: MouseEvent, callback: Callback<NewsResponse>): void {
+    public getNews(e: MouseEvent, callback: Callback<NewsResponse>): void {
         const newsContainer = e.currentTarget;
 
         if (!(newsContainer instanceof HTMLElement)) {

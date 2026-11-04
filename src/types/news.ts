@@ -10,5 +10,5 @@ export interface Article {
 }
 export type ArticleSource = Pick<Source, 'name'> & {
     id: string | null;
-    };
+};
 export type ReadonlyArticle = Readonly<Article>;
