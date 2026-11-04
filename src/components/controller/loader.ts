@@ -1,9 +1,11 @@
+import type { ApiEndpoint } from '../../types/api';
+
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
 export type RequestOptions = Record<string, string>;
 
 export interface RequestConfig {
-    endpoint: string;
+    endpoint: ApiEndpoint;
     options?: RequestOptions;
 }
 

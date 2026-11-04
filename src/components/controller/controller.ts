@@ -1,3 +1,4 @@
+import { ApiEndpoint } from '../../types/api';
 import AppLoader from './appLoader';
 import type { Callback } from './loader';
 import type { NewsResponse, SourcesResponse } from '../../types/api';
@@ -6,7 +7,7 @@ class AppController extends AppLoader {
     getSources(callback: Callback<SourcesResponse>): void {
         super.getResp<SourcesResponse>(
             {
-                endpoint: 'sources',
+                endpoint: ApiEndpoint.Sources,
             },
             callback
         );
@@ -29,7 +30,7 @@ class AppController extends AppLoader {
 
                     super.getResp<NewsResponse>(
                         {
-                            endpoint: 'everything',
+                            endpoint: ApiEndpoint.Everything,
                             options: {
                                 sources: sourceId,
                             },
