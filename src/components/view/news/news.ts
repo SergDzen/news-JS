@@ -1,4 +1,4 @@
-import type{ Article } from '../../../types/news';
+import type { Article } from '../../../types/news';
 
 class News {
     draw(data: Article[]): void {
@@ -33,11 +33,7 @@ class News {
 
             author.textContent = item.author || item.source.name;
 
-            date.textContent = item.publishedAt
-                .slice(0, 10)
-                .split('-')
-                .reverse()
-                .join('-');
+            date.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
 
             title.textContent = item.title;
             source.textContent = item.source.name;

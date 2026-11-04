@@ -1,5 +1,15 @@
-{
+{   
     "root": true,
+    "overrides": [
+    {
+        "files": [
+            "webpack.config.js",
+            "webpack.dev.config.js"
+        ],
+        "rules": {
+            "@typescript-eslint/no-require-imports": "off"
+        }
+    }],
     "plugins": ["@typescript-eslint", "prettier", "import"],
     "extends": [
         "eslint:recommended",

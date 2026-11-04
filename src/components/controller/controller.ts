@@ -26,7 +26,7 @@ class AppController extends AppLoader {
                 const sourceId = target.getAttribute('data-source-id');
                 if (sourceId && newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
-                    
+
                     super.getResp<NewsResponse>(
                         {
                             endpoint: 'everything',
@@ -36,7 +36,6 @@ class AppController extends AppLoader {
                         },
                         callback
                     );
-                    
                 }
                 return;
             }
