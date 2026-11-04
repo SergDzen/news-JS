@@ -1,3 +1,4 @@
+import type { Source } from './source';
 export interface Article {
     author: string | null;
     title: string;
@@ -5,8 +6,8 @@ export interface Article {
     url: string;
     urlToImage: string | null;
     publishedAt: string;
-    source: {
-        id: string | null;
-        name: string;
-    };
+    source: ArticleSource;
 }
+export type ArticleSource = Pick<Source, 'name'> & {
+    id: string | null;
+    };
