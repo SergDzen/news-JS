@@ -3,14 +3,11 @@ import Loader from './loader';
 class AppLoader extends Loader {
     constructor() {
         const apiUrl = process.env.API_URL;
-        const apiKey = process.env.API_KEY;
 
-        if (!apiUrl || !apiKey) {
-            throw new Error('API_URL or API_KEY is not defined');
+        if (!apiUrl) {
+            throw new Error('API_URL is not defined');
         }
-        super(apiUrl, {
-            apiKey: apiKey,
-        });
+        super(apiUrl, {});
     }
 }
 
