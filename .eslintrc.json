@@ -1,9 +1,26 @@
-{
-    "plugins": ["prettier", "import"],
+{   
+    "root": true,
+    "ignorePatterns": [
+    "dist/",
+    "node_modules/"
+  ],
+    "overrides": [
+    {
+        "files": [
+            "webpack.config.js",
+            "webpack.dev.config.js"
+        ],
+        "rules": {
+            "@typescript-eslint/no-require-imports": "off"
+        }
+    }],
+    "plugins": ["@typescript-eslint", "prettier", "import"],
     "extends": [
-        "plugin:prettier/recommended",
-        "prettier"
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module"
@@ -16,6 +33,7 @@
     "rules": {
         "no-debugger": "off",
         "no-console": 0,
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "@typescript-eslint/no-explicit-any": "error"
     }
 }
